@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Unzip project
-        run: unzip testapp.zip
+        run: unzip testapp3.zip
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -24,21 +24,21 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd testapp
+          cd testapp3
           npm install
 
       - name: Add Android Platform
         run: |
-          cd testapp
+          cd testapp3
           cordova platform add android
 
       - name: Build APK
         run: |
-          cd testapp2
+          cd testapp3
           cordova build android
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: android-apk
-          path: testapp2/platforms/android/app/build/outputs/apk/debug/*.apk
+          path: testapp3/platforms/android/app/build/outputs/apk/debug/*.apk
