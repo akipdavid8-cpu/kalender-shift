@@ -1,1 +1,1 @@
-upload testapp2 zip
+upload testapp3 zip
